@@ -1,4 +1,4 @@
-package com.example.tvseriesapp
+package com.example.tvseriesapp.utils
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp

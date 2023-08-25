@@ -1,6 +1,6 @@
 package com.example.tvseriesapp.di
 
-import com.example.tvseriesapp.Constants
+import com.example.tvseriesapp.utils.Constants
 import com.example.tvseriesapp.api.ApiService
 import dagger.Module
 import dagger.Provides
@@ -8,7 +8,6 @@ import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.create
 import javax.inject.Singleton
 
 @Module

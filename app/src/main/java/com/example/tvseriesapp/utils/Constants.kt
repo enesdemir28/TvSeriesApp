@@ -1,4 +1,4 @@
-package com.example.tvseriesapp
+package com.example.tvseriesapp.utils
 
 object Constants {
 
