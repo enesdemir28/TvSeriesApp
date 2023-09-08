@@ -4,7 +4,9 @@ package com.example.tvseriesapp.activitys
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.GridLayoutManager
+import com.example.tvseriesapp.R
 import com.example.tvseriesapp.adapter.TvSeriesAdapter
 import com.example.tvseriesapp.databinding.ActivityMainBinding
 import com.example.tvseriesapp.viewmodel.TvSeriesViewModel
@@ -18,6 +20,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private val viewModel: TvSeriesViewModel by viewModels()
     private lateinit var tvSeriesAdapter: TvSeriesAdapter
+    private lateinit var searchView : SearchView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,6 +29,7 @@ class MainActivity : AppCompatActivity() {
         supportActionBar?.hide()
 
         setUpRv()
+        initSearchView()
     }
 
     private fun setUpRv() {
@@ -40,5 +44,34 @@ class MainActivity : AppCompatActivity() {
         viewModel.responseTvSeries.observe(this, { listTvSeries ->
             tvSeriesAdapter.tvSeries = listTvSeries
         })
+    }
+
+    private fun initSearchView() {
+        searchView = findViewById(R.id.searchView)
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+
+                newText?.let { query ->
+                    filterTvSeries(query)
+                }
+                return true
+            }
+        })
+    }
+
+    private fun filterTvSeries(query: String) {
+
+        val tvSeriesList = viewModel.responseTvSeries.value
+        if (tvSeriesList != null) {
+
+            val filteredList = tvSeriesList.filter { tvSeries ->
+                tvSeries.name.contains(query, ignoreCase = true)
+            }
+            tvSeriesAdapter.tvSeries = filteredList
+        }
     }
 }
