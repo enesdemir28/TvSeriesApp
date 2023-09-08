@@ -23,7 +23,7 @@ You can view the list of TV series taken from TvMaze and filter them by name.
 
 ## Main Activity 1, 2
 
-![Main Activity](MainACtivity.PNG), ![Main Activity Search](MainActivitySearch.PNG)
+![Main Activity](MainActivity.PNG), ![Main Activity Search](MainActivitySearch.PNG)
 
 
 
