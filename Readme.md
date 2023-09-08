@@ -15,5 +15,11 @@ Its a TvSeries application
 
 You can view the list of TV series taken from TvMaze and filter them by name.
 
+# Images
+
+## Splash Screen
+
+
+
 
 
