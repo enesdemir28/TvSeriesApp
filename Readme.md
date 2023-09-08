@@ -19,6 +19,12 @@ You can view the list of TV series taken from TvMaze and filter them by name.
 
 ## Splash Screen
 
+![Splash Screen](SplashScreen.PNG)
+
+## Main Activity 1, 2
+
+![Main Activity](MainACtivity.PNG), ![Main Activity Search](MainActivitySearch.PNG)
+
 
 
 
